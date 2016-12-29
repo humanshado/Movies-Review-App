@@ -1,0 +1,14 @@
+<%= render 'notice' %>
+
+<h4><%= pluralize(@movies.size, 'Movie') %> Found</h4>
+<%= link_to "Add new movie", new_movie_path %> | <%= link_to "Go HOME", root_path %>
+<hr>
+<div class="movies-wrapper">
+    <% @movies.each do |movie| %>
+        <h5><%= link_to(movie.title, movie) %></h5>
+        <p>
+          <strong>Description: </strong><%= truncate(movie.description, length: 60, separator:' ') %>
+          Released <%= time_ago_in_words(movie.released_on) %> ago
+        </p>
+    <% end %>
+</div>

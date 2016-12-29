@@ -1,0 +1,44 @@
+<%= render 'notice' %>
+
+<h4 style = "float:left; padding-right:10px";><%= @movie.title %></h4>   |   <%= link_to "All Movies", movies_path %>
+<hr>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="card shadow justified">
+      <img class="card-img-top img-fluid"><%= link_to image_tag "movie.jpg" %></img>
+      <div class="card-block>
+        <p class="card-text"><strong>Description: </strong><br><%= @movie.description %></p>
+          <section class="tab-able">
+              <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" href="#date-released" data-toggle = "tab">Date Released</a></li>
+                <li class="nav-item"><a class="nav-link" href="#category" data-toggle = "tab">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="#duration" data-toggle = "tab">Duration</a></li>
+                <li class="nav-item"><a class="nav-link" href="#rating" data-toggle = "tab">Rating</a></li>
+                <li class="nav-item"><a class="nav-link" href="#total-gross" data-toggle = "tab">Gross Revenue</a></li>
+              </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="date-released" role="tabpanel">
+                <p><%= @movie.released_on %></p>
+              </div>
+              <div class="tab-pane" id="category" role="tabpanel">
+                <p><%= @movie.category %></p>
+              </div>
+              <div class="tab-pane" id="duration" role="tabpanel">
+                <p><%= @movie.duration %> mins</p>
+              </div>
+              <div class="tab-pane" id="rating" role="tabpanel">
+                <p><%= @movie.rating %></p>
+              </div>
+              <div class="tab-pane" id="total-gross" role="tabpanel">
+                <p><%= format_total_gross(@movie) %></p>
+              </div>
+            </div>
+          </section>
+      </div>
+      <div class="bottom-item">
+        <%= link_to "Edit", edit_movie_path(@movie) %> |
+        <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+  </div>
+</div>

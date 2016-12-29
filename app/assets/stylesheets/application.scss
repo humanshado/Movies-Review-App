@@ -1,0 +1,108 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* General*/
+body{
+  margin-top: 20px;
+}
+
+.card{
+  padding:15px;
+}
+
+.tab-content{
+  height:100px;
+  padding:10px;
+  border: 1px solid #eee;
+  border-top: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item{
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.notice{
+  width:100%;
+  height: auto;
+  background-color: #114B5F;
+  color: #E4FDE1;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.movies-wrapper h5{
+  color: blue;
+}
+
+.justified{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+img{
+  margin:50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+}
+
+.bottom-item{
+  text-align: center;
+  padding-top: 5px;
+}
+
+.shadow{
+  -webkit-box-shadow: -1px 2px 14px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 2px 14px 5px rgba(0,0,0,0.75);
+  box-shadow: -1px 2px 14px 5px rgba(0,0,0,0.75);
+}
+
+.right-sidebar{
+  width: 100px;
+  height:100px;
+  float:right;
+  background-color: blue;
+  padding-top: 70px;
+}
+
+/* Tables */
+table, th, td {
+    border: 1px solid black;
+    padding: 7px;
+}
+
+table {
+    border-spacing: 25px;
+    margin-bottom: 30px;
+}
+
+table tr:nth-child(even) {
+    background-color: #ddd;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+table th {
+    color: white;
+    background-color: #33673B;
+}
