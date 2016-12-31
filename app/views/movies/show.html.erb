@@ -15,6 +15,7 @@
                 <li class="nav-item"><a class="nav-link" href="#duration" data-toggle = "tab">Duration</a></li>
                 <li class="nav-item"><a class="nav-link" href="#rating" data-toggle = "tab">Rating</a></li>
                 <li class="nav-item"><a class="nav-link" href="#total-gross" data-toggle = "tab">Gross Revenue</a></li>
+                <li class="nav-item"><a class="nav-link" href="#cast" data-toggle = "tab">Actors</a></li>
               </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="date-released" role="tabpanel">
@@ -32,13 +33,21 @@
               <div class="tab-pane" id="total-gross" role="tabpanel">
                 <p><%= format_total_gross(@movie) %></p>
               </div>
+              <div class="tab-pane" id="cast" role="tabpanel">
+                <p><%= @movie.cast %></p>
+              </div>
             </div>
           </section>
       </div>
       <div class="bottom-item">
+        <%= link_to movie_reviews_path(@movie), class: "btn btn-outline-primary"  do %>
+              <%= content_tag :span, pluralize(@movie.reviews.size, 'Review'), class: 'tag' %>
+        <% end %> <br/><br/>
+        <%= link_to "Write Review", new_movie_review_path(@movie) %> |
         <%= link_to "Edit", edit_movie_path(@movie) %> |
         <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
+
     </div>
   </div>
 </div>

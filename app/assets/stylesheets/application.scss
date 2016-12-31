@@ -28,7 +28,7 @@ body{
 .tab-content{
   height:100px;
   padding:10px;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   border-top: 0;
   text-align: center;
   font-size: 2.5rem;
@@ -43,8 +43,8 @@ body{
 .notice{
   width:100%;
   height: auto;
-  background-color: #114B5F;
-  color: #E4FDE1;
+  color: #114B5F;
+  background-color: #E4FDE1;
   font-size: 1.2rem;
   text-align: center;
   font-weight: bold;
@@ -68,7 +68,7 @@ img{
 
 .bottom-item{
   text-align: center;
-  padding-top: 5px;
+  padding: 15px;
 }
 
 .shadow{
@@ -83,6 +83,19 @@ img{
   float:right;
   background-color: blue;
   padding-top: 70px;
+}
+
+.tag{
+  font-size: 100%;
+  color:#0074d9;
+}
+
+.tag:hover{
+  color:#fff;
+}
+
+.tag span:first-child{
+  color: orange;
 }
 
 /* Tables */

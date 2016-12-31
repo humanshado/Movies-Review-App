@@ -1,0 +1,21 @@
+<header id="content-header">
+  <h6>New Review for <%= link_to(@movie.title, @movie) %></h6>
+</header>
+
+<%= form_for([@movie, @review]) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, size: 25, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :stars %><br/>
+    <%= f.number_field :stars %>
+  </p>
+  <p>
+    <%= f.label :comment %><br/>
+    <%= f.text_area :comment, cols: 60, rows: 5 %>
+  </p>
+  <p>
+    <%= f.submit 'Post Review' %>
+  </p>
+<% end %>
