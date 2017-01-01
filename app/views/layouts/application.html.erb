@@ -9,11 +9,12 @@
   </head>
 
   <body>
-    <div class="container">
-      <aside class="right-sidebar">
+    <div class="container-fluid navbar navbar-fixed-top">
+      <%= render 'movies/notice' %>
+    </div>
 
-      </aside>
-
+    <div class="container main-wrapper">
+      <aside class="right-sidebar"></aside>
       <%= yield %>
     </div>
 

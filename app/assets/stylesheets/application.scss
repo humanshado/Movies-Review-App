@@ -18,6 +18,10 @@
 
 /* General*/
 body{
+  padding: 0;
+  margin: 0;
+}
+.main-wrapper{
   margin-top: 20px;
 }
 
@@ -41,7 +45,7 @@ body{
 }
 
 .notice{
-  width:100%;
+  width:100vw;
   height: auto;
   color: #114B5F;
   background-color: #E4FDE1;

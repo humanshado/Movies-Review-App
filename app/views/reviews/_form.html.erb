@@ -1,8 +1,4 @@
-<header id="content-header">
-  <h6>New Review for <%= link_to(@movie.title, @movie) %></h6>
-</header>
-
-<%= form_for([@movie, @review]) do |f| %>
+<%= form_for([@movie, @movie.reviews.build]) do |f| %>
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name, size: 25, autofocus: true %>
@@ -16,6 +12,6 @@
     <%= f.text_area :comment, cols: 60, rows: 5 %>
   </p>
   <p>
-    <%= f.submit 'Post Review' %>
+    <%= f.submit 'Post Review', class: "btn btn-primary" %>
   </p>
 <% end %>

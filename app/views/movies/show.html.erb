@@ -1,5 +1,3 @@
-<%= render 'notice' %>
-
 <h4 style = "float:left; padding-right:10px";><%= @movie.title %></h4>   |   <%= link_to "All Movies", movies_path %>
 <hr>
 <div class="row">
@@ -43,10 +41,17 @@
         <%= link_to movie_reviews_path(@movie), class: "btn btn-outline-primary"  do %>
               <%= content_tag :span, pluralize(@movie.reviews.size, 'Review'), class: 'tag' %>
         <% end %> <br/><br/>
-        <%= link_to "Write Review", new_movie_review_path(@movie) %> |
         <%= link_to "Edit", edit_movie_path(@movie) %> |
         <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
+    </div>
+    <br /><br />
+    <div class="reviews">
+      <h6>Reviews</h6>
+      <%= render 'reviews/review' %>
+      <br />
+      <h6>Write a Review</h6>
+      <%= render 'reviews/form' %>
 
     </div>
   </div>
