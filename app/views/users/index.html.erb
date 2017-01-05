@@ -1,0 +1,26 @@
+<article class="users-list">
+  <header>
+    <h4><%= pluralize(@user.size, 'User') %> <i class="fa fa-users" aria-hidden="true"></i></h4>
+    <hr>
+  </header>
+  <section>
+    <% @user.each do |user| %>
+      <ul>
+        <li>
+          <%= link_to user.name, user %>
+          <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-success" %>
+          <%= link_to "Delete", user_path(user),
+                    method: :delete,
+                    data: { confirm: "Are you sure?"  },
+                    class: "btn btn-outline-danger" %>
+        </li>
+      </ul>
+    <% end %>
+  </section>
+
+  <footer>
+    <nav>
+      <%= link_to "Create New User", new_user_path, class: "btn btn-outline-primary" %>
+    </nav>
+  </footer>
+</article>

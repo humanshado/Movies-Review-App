@@ -9,12 +9,20 @@
   </head>
 
   <body>
-    <div class="container-fluid navbar navbar-fixed-top">
-      <%= render 'movies/notice' %>
-    </div>
+      <nav class=" container-fluid navbar navbar-fixed-top" id="main-nav">
+        <%= render 'movies/notice' %>
+      </nav>
 
     <div class="container main-wrapper">
-      <aside class="right-sidebar"></aside>
+      <aside class="right-sidebar">
+        <% if current_user %>
+          <%= link_to current_user.name, current_user %>
+          <%= link_to "Sign Out", session_path, method: :delete, class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to '<i class="fa fa-address-book-o" aria-hidden="true"></i> Sign Up'.html_safe, signup_path, class: "btn btn-primary" %>
+          <%= link_to '<i class="fa fa-sign-in" aria-hidden="true"></i> Sign In'.html_safe, new_session_path, class: "btn btn-success" %>
+        <% end %>
+      </aside>
       <%= yield %>
     </div>
 
