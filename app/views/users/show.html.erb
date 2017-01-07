@@ -1,10 +1,27 @@
-<article class="user">
+<article class="user col-xs-12 col-sm-12 col-md-8 col-lg-8">
   <header>
     <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i> | <%= link_to @user.name, user_path %></h4>
     <h6><%= @user.email %></h6>
   </header>
   <hr />
+
+  <% if @reviews.any? %>
+    <h6>List of Reviews</h6>
+    <ul>
+      <% @reviews.each do |review| %>
+        <li>
+          <span><strong><%= link_to review.movie.title, review.movie %></strong></span> :
+          <span><strong><%= pluralize(review.stars, 'Star') %></strong></span>
+          <p>
+            &quot;<%= review.comment %>&quot;
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <br /><br />
+  <hr />
   <footer>
     <nav>
       <% if current_user?(@user) %>

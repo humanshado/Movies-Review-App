@@ -1,6 +1,5 @@
 <%= form_for(@user) do |f| %>
-  <fieldset class="form-horizontal">
-    <p class="form-group">
+    <p>
       <%= f.label :name %>
       <%= f.text_field :name, autofocus: true%>
     </p>
@@ -23,5 +22,4 @@
         <%= f.submit "Update Account" %>
       <% end %>
     </p>
-  </fieldset>
 <% end %>

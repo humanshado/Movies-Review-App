@@ -4,7 +4,6 @@
 <hr />
 
 <%= form_tag(session_path) do %>
-  <fieldset>
     <p>
       <%= label_tag :email %>
       <%= email_field_tag :email, nil, autofocus: true %>
@@ -16,6 +15,5 @@
     <p>
       <%= submit_tag "Sign In" %>
     </p>
-  </fieldset>
 
 <% end %>

@@ -1,8 +1,6 @@
+<hr />
 <%= form_for([@movie, @movie.reviews.build]) do |f| %>
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, size: 25, autofocus: true %>
-  </p>
+
   <p>
     <%= f.label :stars %><br/>
     <%= f.number_field :stars %>
