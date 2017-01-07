@@ -63,6 +63,17 @@ body{
   color: blue;
 }
 
+#add-show-nav{
+  margin-top: 15px;
+  list-style: none;
+}
+
+.add-show-nav-item{
+  padding:5px;
+  margin: 5px;
+  width: 75%
+}
+
 .justified{
   text-align: justify;
   text-justify: inter-word;
@@ -89,7 +100,7 @@ img{
 .right-sidebar{
   width: 276px;
   height:auto;
-  background-color: #ddd;
+  background-color: inherit;
   position:absolute;
   top:115px;
   left:1000px;

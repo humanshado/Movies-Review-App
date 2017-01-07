@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_signin, except: [:index, :show]
 
   def new
     @movie = Movie.find(params[:movie_id])

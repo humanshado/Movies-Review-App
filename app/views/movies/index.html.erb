@@ -1,5 +1,5 @@
 <h4><%= pluralize(@movies.size, 'Movie') %> Found</h4>
-<%= link_to "Add new movie", new_movie_path %> | <%= link_to "Go HOME", root_path %>
+<%= link_to "Go HOME", root_path %>
 <hr>
 <div class="movies-wrapper">
     <% @movies.each do |movie| %>

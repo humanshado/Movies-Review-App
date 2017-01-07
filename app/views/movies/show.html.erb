@@ -41,8 +41,10 @@
         <%= link_to movie_reviews_path(@movie), class: "btn btn-outline-primary"  do %>
               <%= content_tag :span, pluralize(@movie.reviews.size, 'Review'), class: 'tag' %>
         <% end %> <br/><br/>
-        <%= link_to "Edit", edit_movie_path(@movie) %> |
-        <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% if current_user_admin? %>
+          <%= link_to "Edit", edit_movie_path(@movie) %> |
+          <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
       </div>
     </div>
     <br /><br />
@@ -50,8 +52,10 @@
       <h6>Reviews</h6>
       <%= render 'reviews/review' %>
       <br />
-      <h6>Write a Review</h6>
-      <%= render 'reviews/form' %>
+      <% if current_user %>
+        <h6>Write a Review</h6>
+        <%= render 'reviews/form' %>
+      <% end %>
 
     </div>
   </div>
