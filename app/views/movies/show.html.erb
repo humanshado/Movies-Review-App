@@ -40,6 +40,9 @@
       <div class="bottom-item">
         <%= link_to movie_reviews_path(@movie), class: "btn btn-outline-primary"  do %>
               <%= content_tag :span, pluralize(@movie.reviews.size, 'Review'), class: 'tag' %>
+        <% end %>
+        <%= link_to movie_favorites_path(@movie), class: "btn btn-outline-success"  do %>
+              <%= content_tag :span, pluralize(@fans.size, 'Fan'), class: 'tag' %>
         <% end %> <br/><br/>
         <% if current_user_admin? %>
           <%= link_to "Edit", edit_movie_path(@movie) %> |
