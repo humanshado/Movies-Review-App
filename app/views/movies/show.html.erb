@@ -6,6 +6,20 @@
       <img class="card-img-top img-fluid"><%= link_to image_tag "movie.jpg" %></img>
       <div class="card-block>
         <p class="card-text"><strong>Description: </strong><br><%= @movie.description %></p>
+
+        <hr />
+        <p>
+          <strong><%= pluralize(@fans.size, 'Fan')%></strong>
+        </p>
+        <% if current_user %>
+            <% if @current_favorite %>
+              <%= button_to 'UnFav it!', movie_favorite_path(@movie, @current_favorite), method: :delete, class: "btn btn-outline-danger" %>
+            <% else %>
+              <%= button_to 'Fav it!', movie_favorites_path(@movie), class: "btn btn-outline-success" %>
+            <% end %>
+        <% end %>
+        <br />
+
           <section class="tab-able">
               <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" href="#date-released" data-toggle = "tab">Date Released</a></li>
@@ -37,13 +51,12 @@
             </div>
           </section>
       </div>
+
       <div class="bottom-item">
         <%= link_to movie_reviews_path(@movie), class: "btn btn-outline-primary"  do %>
               <%= content_tag :span, pluralize(@movie.reviews.size, 'Review'), class: 'tag' %>
         <% end %>
-        <%= link_to movie_favorites_path(@movie), class: "btn btn-outline-success"  do %>
-              <%= content_tag :span, pluralize(@fans.size, 'Fan'), class: 'tag' %>
-        <% end %> <br/><br/>
+         <br/><br/>
         <% if current_user_admin? %>
           <%= link_to "Edit", edit_movie_path(@movie) %> |
           <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } %>

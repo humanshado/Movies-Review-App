@@ -22,6 +22,19 @@
 
   <br /><br />
   <hr />
+
+  <% if @favorites.any? %>
+    <h6>Favorite Movies</h6>
+    <ul>
+      <% @favorites.each do |movie| %>
+        <li><%= link_to movie.title, movie %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <br /><br />
+  <hr />
+
   <footer>
     <nav>
       <% if current_user?(@user) %>

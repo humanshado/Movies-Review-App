@@ -26,11 +26,11 @@
 
         <ul id="add-show-nav">
           <% if current_user %>
-            <li><%= link_to "Show All Users", users_path, class: "btn btn-outline-info add-show-nav-item" %></li>
+            <li><%= link_to "All Users", users_path, class: "btn btn-outline-info add-show-nav-item" %></li>
           <% end %>
-          <li><%= link_to "Show All Movies", movies_path, class: "btn btn-outline-success add-show-nav-item" %></li>
+          <li><%= link_to "All Movies", movies_path, class: "btn btn-outline-success add-show-nav-item" %></li>
           <% if current_user_admin? %>
-            <li><%= link_to "Add New Movie", new_movie_path, class: "btn btn-outline-primary add-show-nav-item" %></li>
+            <li><%= link_to '<i class="fa fa-plus-square" aria-hidden="true"></i> New Movie'.html_safe, new_movie_path, class: "btn btn-outline-primary add-show-nav-item" %></li>
           <% end %>
         </ul>
       </aside>

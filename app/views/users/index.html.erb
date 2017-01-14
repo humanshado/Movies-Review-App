@@ -5,21 +5,22 @@
   </header>
   <section>
     <% @user.each do |user| %>
-      <ul>
-        <li>
-          <%= link_to user.name, user %>
+      <table>
+        <tr>
+          <td class="user-name"><%= link_to user.name, user %>  </td>
           <% if current_user_admin? %>
-            <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-success" %>
-            <%= link_to "Delete", user_path(user),
-                      method: :delete,
-                      data: { confirm: "Are you sure?"  },
-                      class: "btn btn-outline-danger" %>
-          <% end %>
-        </li>
-      </ul>
+                <td><%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_user_path(user), class: "btn btn-outline-warning" %></td>
+                <td><%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, user_path(user),
+                          method: :delete,
+                          data: { confirm: "Are you sure?"  },
+                          class: "btn btn-outline-danger" %>
+                </td>
+            <% end %>
+        </tr>
+      </table>
     <% end %>
   </section>
-
+  <hr />
   <footer>
     <nav>
       <% if current_user_admin? %>

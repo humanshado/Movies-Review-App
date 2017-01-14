@@ -121,13 +121,11 @@ img{
 
 /* Tables */
 table, th, td {
-    border: 1px solid black;
     padding: 7px;
 }
 
 table {
     border-spacing: 25px;
-    margin-bottom: 30px;
 }
 
 table tr:nth-child(even) {
@@ -136,7 +134,7 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
     background-color: #fff;
 }
-table th {
-    color: white;
-    background-color: #33673B;
+
+.user-name{
+  width: 200px;
 }

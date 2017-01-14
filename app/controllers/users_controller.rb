@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews
+    @favorites = @user.favorite_movies
   end
 
   def new
@@ -18,9 +19,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      flash[:notice] = "Account created successfully!"
-      redirect_to user_path(@user)
+      if current_user_admin?
+        flash[:notice] = "Account created successfully!"
+        redirect_to users_path
+      else
+        session[:user_id] = @user.id
+        flash[:notice] = "Account created successfully!"
+        redirect_to user_path(@user)
+      end
     else
       render ('new')
     end
@@ -53,7 +59,7 @@ private
 
   def require_correct_user
     @user = User.find(params[:id])
-    unless current_user?(@user)
+    unless current_user?(@user) || current_user_admin?
       flash[:notice] = "Not Correct user, Access Denied!"
       redirect_to(root_url)
     end
