@@ -1,38 +1,38 @@
 <%= form_for(@movie) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title, autofocus: true %>
+  <p class: "form-group">
+    <%= f.label :title, class: "form-label"%><br>
+    <%= f.text_field :title, class: "form-control", autofocus: true %>
   </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description, cols: 60, rows: 8 %>
+  <p class: "form-group">
+    <%= f.label :description, class: "form-label"%><br>
+    <%= f.text_area :description,  class: "form-control", cols: 60, rows: 8 %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :released_on %><br>
-    <%= f.date_select :released_on, starts_year: 1900 %>
+    <%= f.date_select :released_on, class: "form-control" , starts_year: 1900 %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, class: "form-control" %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :duration %><br>
-    <%= f.number_field :duration %>
+    <%= f.number_field :duration, class: "form-control" %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
+    <%= f.text_field :rating, class: "form-control" %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :total_gross %><br>
-    <%= f.number_field :total_gross %>
+    <%= f.number_field :total_gross, class: "form-control" %>
   </p>
-  <p>
+  <p class: "form-group">
     <%= f.label :cast %><br>
-    <%= f.text_field :cast %>
+    <%= f.text_field :cast, class: "form-control" %>
   </p>
   <p>
-    <%= f.submit %> |
+    <%= f.submit class: "btn btn-success" %> 
     <%= link_to "Cancel", movies_path, class: "btn btn-danger" %>
   </p>
 <% end %>

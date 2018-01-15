@@ -1,25 +1,27 @@
 <%= form_for(@user) do |f| %>
-    <p>
+    <p class: "form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true%>
+      <span><%= f.text_field :name, class: "form-control", autofocus: true%></span>
     </p>
-    <p class="form-group">
+    <p class: "form-group">
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <span><%= f.text_field :email, class: "form-control" %></span>
     </p>
-    <p class="form-group">
+    <p class: "form-group">
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <span><%= f.password_field :password, class: "form-control" %></span>
     </p>
-    <p class="form-group">
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <p class="form-group">
+    <p class: "form-group">
+      <span><%= f.label :password_confirmation, "Confirm Password" %></span>
+      <span><%= f.password_field :password_confirmation, class: "form-control" %></span>
+    </p><br />
+    <p class:"form-group">
       <% if @user.new_record? %>
-        <%= f.submit "Create Account" %>
+        <%= f.submit "Create Account", class: "btn btn-outline-primary" %>
+        <span><%= link_to "Cancel", users_path, class: "btn btn-danger" %></span>
       <% else %>
-        <%= f.submit "Update Account" %>
+      <%= f.submit "Update Account", class: "btn btn-primary" %>
+      <span><%= link_to "Cancel", users_path, class: "btn btn-danger" %></span>
       <% end %>
     </p>
 <% end %>
